@@ -1,0 +1,4 @@
+dataBase.db
+dist/
+log/
+node_modules/
