@@ -48,19 +48,19 @@ router.get(`${apiString}/:id`, async(req, resp, next)=> {
 
 router.post(apiString, async(req, resp, next)=>{
   const res = await testController.insertOne(req, resp, next)
-  const data = respLayer.sqlLayer(res)
+  const data = respLayer.addLayer(res)
   resp.status(httpStatus.OK).json(data)
 })
 
 router.put(`${apiString}/:id`, async(req, resp, next)=> {
   const res = await testController.update(req, resp, next)
-  const data = respLayer.sqlLayer(res)
+  const data = respLayer.updateLayer(res)
   resp.status(httpStatus.OK).json(data)
 })
 
 router.delete(`${apiString}/:id`, async(req, resp, next)=> {
   const res = await testController.del(req, resp, next)
-  const data = respLayer.sqlLayer(res)
+  const data = respLayer.delLayer(res)
 
   resp.status(httpStatus.OK).json(data)
 })

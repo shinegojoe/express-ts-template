@@ -1,15 +1,8 @@
 import { BaseController } from '../controller/base.controller'
-import { TestModel, cfg } from '../model/test.model'
+import { TestModel, cfg, TestStruct } from '../model/test.model'
 // import { BaseLayer } from '../responseLayer/baseLayer'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
 import { IResp } from '../responseLayer/serverResp'
-
-
-type TestStruct = {
-  id: number
-  name: string
-}
-
 
 
 const sqliteHelper = new SqliteHelper()
