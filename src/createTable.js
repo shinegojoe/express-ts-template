@@ -15,7 +15,7 @@ const dbInit = () => {
 const createTestTable = (db) => {
   const sql = `CREATE TABLE testTable (
     id INTEGER PRIMARY KEY AUTOINCREMENT,  
-    name TEXT NOT NULL
+    name TEXT NOT NULL UNIQUE
   );`
   const stmt = db.prepare(sql)
   const res = stmt.run()
