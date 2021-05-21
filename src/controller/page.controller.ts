@@ -7,7 +7,12 @@ class PageController extends BaseController<Page> {
   }
 }
 
-export { PageController }
+// const sqliteHelper = new SqliteHelper()
+// const model = new PageModel(sqliteHelper, cfg)
+// const controller = new PageController(model)
+
+export { PageController}
+
 
 
 

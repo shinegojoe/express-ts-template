@@ -11,6 +11,7 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
     message: err.message
   }
   const resp = new ServerResp(msg, 'error')
+
   return res.status(httpStatus.OK).json(resp)
 }
 

@@ -26,12 +26,10 @@ class BaseModel implements IBaseModel {
   }
 
   async update(req: Request): Promise<RunResult> {
+    const filter = {...req.body, id: req.params.id,}
     const q: IQuery = {
       query: this.cfg.update,
-      filter: {
-        id: req.params.id,
-        name: req.body.name
-      }
+      filter
     }
     const res = await this.sqliteHelper.update(q)
     return res
@@ -49,10 +47,11 @@ class BaseModel implements IBaseModel {
   }
 
   async findMany<T>(req: Request): Promise<T[]> {
-    const name = req.query.name
+    // const name = req.query.name
+    console.log('find many', req.query)
     const q: IQuery = {
       query: this.cfg.list,
-      filter: { name: name }
+      filter: req.query
     }
     const res = await this.sqliteHelper.findMany<T>(q)
     return res

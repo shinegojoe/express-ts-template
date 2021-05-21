@@ -47,6 +47,7 @@ class BaseController<T> implements IBaseController {
       return data
 
     } catch(e) {
+      console.log('xxx', e)
       next(e)
     }
   }

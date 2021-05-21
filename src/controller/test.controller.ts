@@ -5,9 +5,9 @@ import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
 import { IResp } from '../responseLayer/serverResp'
 
 
-const sqliteHelper = new SqliteHelper()
+// const sqliteHelper = new SqliteHelper()
 // const respLayer = new BaseLayer()
-const model = new TestModel(sqliteHelper, cfg)
+// const model = new TestModel(sqliteHelper, cfg)
 
 class TestController extends BaseController<TestStruct> {
   constructor(model: TestModel) {
@@ -15,6 +15,6 @@ class TestController extends BaseController<TestStruct> {
   }
 }
 
-const controller = new TestController(model)
+// const controller = new TestController(model)
 
-export default controller
+export { TestController }
