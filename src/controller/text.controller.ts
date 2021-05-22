@@ -1,5 +1,6 @@
 import { BaseController } from './base.controller'
-import { Text, TextModel} from '../model/text.model'
+import {  TextModel} from '../model/text.model'
+import { Text } from '../type/api.type'
 
 class TextController extends BaseController<Text> {
   constructor(model: TextModel) {

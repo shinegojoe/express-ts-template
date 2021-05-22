@@ -2,11 +2,6 @@ import { BaseModel } from './base.model'
 import { ISqlConfig } from '../helper/DBHelper/ISqlConfig'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
 
-type Script = {
-  id?: number
-  name: string
-  text: string
-}
 
 const cfg: ISqlConfig = {
   add: 'INSERT or IGNORE INTO script(name, text) VALUES($name, $text) ',
@@ -22,4 +17,4 @@ class ScriptModel extends BaseModel {
   }
 }
 
-export { ScriptModel, cfg, Script }
+export { ScriptModel, cfg }

@@ -3,12 +3,7 @@ import { ISqlConfig } from '../helper/DBHelper/ISqlConfig'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
 
 
-type Vocabulary = {
-  id?: number
-  vocabulary: string
-  checked: boolean
-  pageId: number
-}
+
 
 const cfg: ISqlConfig = {
   add: 'INSERT or IGNORE INTO vocabulary(vocabulary, pageId) VALUES($vocabulary, $pageId)',
@@ -24,4 +19,4 @@ class VocabularyModel extends BaseModel {
   }
 }
 
-export { VocabularyModel, Vocabulary, cfg }
+export { VocabularyModel, cfg }

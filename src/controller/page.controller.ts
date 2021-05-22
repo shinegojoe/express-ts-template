@@ -1,5 +1,6 @@
-import { Page, PageModel, cfg } from '../model/page.model'
+import {  PageModel } from '../model/page.model'
 import { BaseController } from './base.controller'
+import { Page } from '../type/api.type'
 
 class PageController extends BaseController<Page> {
   constructor(model: PageModel) {

@@ -1,7 +1,8 @@
 import { BaseRouter } from './base.route'
 import { TextController } from '../controller/text.controller'
-import { TextModel, Text, cfg } from '../model/text.model'
+import { TextModel, cfg } from '../model/text.model'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
+import { Text } from '../type/api.type'
 
 class TextRouter extends BaseRouter<Text> {
   constructor(apiString: string, controller: TextController) {

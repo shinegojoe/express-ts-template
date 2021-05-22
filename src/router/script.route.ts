@@ -1,7 +1,8 @@
 import { BaseRouter } from './base.route'
 import { ScriptController } from '../controller/script.controller'
-import { ScriptModel, Script, cfg } from '../model/script.model'
+import { ScriptModel, cfg } from '../model/script.model'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
+import { Script } from '../type/api.type'
 
 
 class ScriptRouter extends BaseRouter<Script> {

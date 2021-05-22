@@ -2,11 +2,7 @@ import { BaseModel } from './base.model'
 import { ISqlConfig } from '../helper/DBHelper/ISqlConfig'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
 
-type Text = {
-  id?: number
-  vId: number
-  text: string
-}
+
 
 const cfg: ISqlConfig = {
   add: 'INSERT or IGNORE INTO text(text, vId) VALUES($text, $vId)',
@@ -22,4 +18,4 @@ class TextModel extends BaseModel {
   }
 }
 
-export { TextModel, Text, cfg }
+export { TextModel, cfg }

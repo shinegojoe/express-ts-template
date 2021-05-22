@@ -1,8 +1,8 @@
 import { PageController } from '../controller/page.controller'
-import { PageModel, Page, cfg} from '../model/page.model'
+import { PageModel, cfg} from '../model/page.model'
 import { BaseRouter } from './base.route'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
-
+import { Page } from '../type/api.type'
 
 
 const apiString = '/page'

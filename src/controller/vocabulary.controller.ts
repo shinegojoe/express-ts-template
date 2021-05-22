@@ -1,5 +1,6 @@
 import { BaseController } from './base.controller'
-import { VocabularyModel, Vocabulary, cfg } from '../model/vocabulary.model'
+import { VocabularyModel, cfg } from '../model/vocabulary.model'
+import { Vocabulary } from '../type/api.type'
 
 class VocabularyController extends BaseController<Vocabulary> {
   constructor(model: VocabularyModel) {

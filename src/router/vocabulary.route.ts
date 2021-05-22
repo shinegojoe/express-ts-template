@@ -1,7 +1,8 @@
 import { BaseRouter } from './base.route'
-import { VocabularyModel, Vocabulary, cfg } from '../model/vocabulary.model'
+import { VocabularyModel, cfg } from '../model/vocabulary.model'
 import { VocabularyController } from '../controller/vocabulary.controller'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
+import { Vocabulary } from '../type/api.type'
 
 
 class VocabularyRouter extends BaseRouter<Vocabulary> {

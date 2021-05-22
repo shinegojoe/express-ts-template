@@ -2,10 +2,6 @@ import { BaseModel } from './base.model'
 import { ISqlConfig } from '../helper/DBHelper/ISqlConfig'
 import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
 
-type Page = {
-  id?: number
-  name: string
-}
 
 const cfg: ISqlConfig = {
   add: 'INSERT or IGNORE INTO page(name) VALUES($name) ',
@@ -21,4 +17,4 @@ class PageModel extends BaseModel {
   }
 }
 
-export { PageModel, cfg, Page }
+export { PageModel, cfg  }
