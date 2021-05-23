@@ -18,8 +18,9 @@ class SoundRouter implements IRouter {
         this.router.post(this.apiString, async(req, resp, next)=> {
             try {
                 const data = await this.controller.sound(req)
-                const res = respLayer.baseLayer<any>(data)
-                resp.status(httpStatus.OK).json(res)
+                // const res = respLayer.baseLayer<any>(data)
+                // resp.status(httpStatus.OK).json(res)
+                resp.send(data)
             } catch(e) {
                 next(e)
             }

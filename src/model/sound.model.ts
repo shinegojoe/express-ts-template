@@ -8,6 +8,8 @@ const port  = process.env.SOUND_SERVER_PORT
 
 
 class SoundModel {
+
+   
     async sound(req: Request): Promise<any> {
         const url = `${host}:${port}`
         const gtts = await axios({
@@ -16,6 +18,7 @@ class SoundModel {
             data: req.body
         })
         console.log('gtts', gtts.data)
+        
         var data = fs.readFileSync(gttsFile)
         return data
     }
