@@ -5,6 +5,7 @@ import scriptRouter from './script.route'
 import vocabularyRouter from './vocabulary.route'
 import textRouter from './text.route'
 import soundRouter from './sound.route'
+import translateRouter from './translate.route'
 
 const router = Router()
 router.use('/', testRouter)
@@ -13,5 +14,6 @@ router.use('/', scriptRouter)
 router.use('/', vocabularyRouter)
 router.use('/', textRouter)
 router.use('/', soundRouter)
+router.use('/', translateRouter)
 
 export default router

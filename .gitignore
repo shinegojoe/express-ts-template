@@ -1,4 +1,5 @@
 dataBase.db
+vocabulary.db
 dist/
 log/
 node_modules/
