@@ -24,3 +24,6 @@ export type Vocabulary = {
     pageId: number
 }
 
+export type Translate = {
+    text: string
+}

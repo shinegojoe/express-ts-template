@@ -1,5 +1,6 @@
 import { Request } from 'express'
 import axios from 'axios'
+import { Translate } from '../type/api.type'
 
 const host  = process.env.SOUND_SERVER_HOST
 const port  = process.env.SOUND_SERVER_PORT
@@ -15,10 +16,11 @@ class TranslateModel {
     if(gtts.data.status !== "ok") {
       throw Error("translate error")
     }
-    console.log(gtts.data)
-    return {
-      text: gtts.data.text
+    // console.log(gtts.data)
+    const data: Translate = {
+      text: gtts.data.tex
     }
+    return data
   }
 }
 
