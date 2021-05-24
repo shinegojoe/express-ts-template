@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "NODE_ENV=development ts-node src/index.ts",
+    "start:prod": "NODE_ENV=production ts-node src/index.ts",
     "test": "mocha -r dotenv/config --require ts-node/register test/*.ts"
   },
   "author": "",
