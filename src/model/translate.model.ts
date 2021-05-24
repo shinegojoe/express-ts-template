@@ -1,27 +1,31 @@
 import { Request } from 'express'
 import axios from 'axios'
-import { Translate } from '../type/api.type'
+import googleTranslate from '@google-cloud/translate'
+import { Translate as TranslateType } from '../type/api.type'
 
-const host  = process.env.SOUND_SERVER_HOST
-const port  = process.env.SOUND_SERVER_PORT
+
+const { Translate } = googleTranslate.v2
+const translate = new Translate()
+
+
+
 
 class TranslateModel {
   async translate(req: Request) {
-    const url = `${host}:${port}`
-    const gtts = await axios({
-        method: 'POST',
-        url: `${url}/translate`,
-        data: req.body
-    })
-    if(gtts.data.status !== "ok") {
-      throw Error("translate error")
-    }
-    // console.log(gtts.data)
-    const data: Translate = {
-      text: gtts.data.text
+    const text = req.body.text
+    const target = 'zh-TW'
+    // const [languages] = await translate.getLanguages()
+    // console.log('languages', languages)
+    const [translation] = await translate.translate(text, target)
+    console.log(`Translation: ${translation}`)
+    const data: TranslateType = {
+      text: translation
     }
     return data
   }
 }
 
 export { TranslateModel }
+
+// /Users/taka/Downloads/vocabulary-trainer-314704-33075cda622a.json
+// export GOOGLE_APPLICATION_CREDENTIALS=/Users/taka/Downloads/vocabulary-trainer-314704-33075cda622a.json
