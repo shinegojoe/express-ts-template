@@ -47,8 +47,20 @@ const createText = (db) => {
   console.log('text table', res)
 }
 
+const createTranslate = (db) => {
+  const sql = `CREATE TABLE translate (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,  
+    vocabulary TEXT NOT NULL UNIQUE,
+    text TEXT NOT NULL
+  );`
+  const stmt = db.prepare(sql)
+  const res = stmt.run()
+  console.log('vocabulary table', res)
+}
+
 // createTab(db)
-createScript(db)
-createPage(db)
-createVocabulary(db)
-createText(db)
+// createScript(db)
+// createPage(db)
+// createVocabulary(db)
+// createText(db)
+createTranslate(db)
