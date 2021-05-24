@@ -18,7 +18,7 @@ class TranslateModel {
     }
     // console.log(gtts.data)
     const data: Translate = {
-      text: gtts.data.tex
+      text: gtts.data.text
     }
     return data
   }
