@@ -4,6 +4,7 @@ import { TranslateModel } from '../model/translate.model'
 import { TranslateController } from '../controller/translate.controller'
 import { IRouter } from './IRouter'
 import responseLayer from '../responseLayer/baseLayer'
+import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
 
 class TranslateRouter implements IRouter {
 
@@ -37,7 +38,8 @@ class TranslateRouter implements IRouter {
 }
 
 const apiString = '/translate'
-const model = new TranslateModel()
+const sqliteHelper = new SqliteHelper()
+const model = new TranslateModel(sqliteHelper)
 const controller = new TranslateController(model)
 const router: Router = new TranslateRouter(controller, apiString).build()
 

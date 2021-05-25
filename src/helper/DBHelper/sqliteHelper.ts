@@ -59,6 +59,8 @@ class SqliteHelper implements IDB {
 
       } catch(e) {
         throw e
+      } finally {
+        db.close()
       }
 
     })
