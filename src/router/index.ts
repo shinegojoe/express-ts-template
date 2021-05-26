@@ -16,4 +16,8 @@ router.use('/', textRouter)
 router.use('/', soundRouter)
 router.use('/', translateRouter)
 
+router.get('/echo', (res, resp, next)=> {
+  resp.send('test v1')
+})
+
 export default router

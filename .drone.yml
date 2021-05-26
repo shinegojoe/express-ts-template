@@ -1,5 +1,5 @@
 kind: pipeline
-name: i18n CI
+name: vocabulary-server
 type: docker
 
 steps:
@@ -13,9 +13,9 @@ steps:
   #     - sleep 10
   #     - npm run test
 
-  - name: deploy-server
+  - name: deploy
     image: node:latest
     commands:
       # - bash test2.sh
       - npm install axios
-      - bash build.sh
+      - bash deploy/deploy.sh
