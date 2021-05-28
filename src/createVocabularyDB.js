@@ -25,7 +25,7 @@ const createPage = ()=> {
 const createVocabulary = (db) => {
   const sql = `CREATE TABLE vocabulary (
     id INTEGER PRIMARY KEY AUTOINCREMENT,  
-    vocabulary TEXT NOT NULL UNIQUE,
+    vocabulary TEXT NOT NULL,
     checked INTEGER DEFAULT 0,
     pageId INTEGER NOT NULL,
     FOREIGN KEY("pageId") REFERENCES "page"("id")
