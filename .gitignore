@@ -3,3 +3,4 @@ vocabulary.db
 dist/
 log/
 node_modules/
+deploy/dist.tar.gz

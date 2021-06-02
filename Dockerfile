@@ -27,4 +27,4 @@ EXPOSE 5010
 # rm -r dist
 # rm dist.tar.gz
 # start cmd
-# sudo docker run --name vocabulary-trainer-server -ti -d -p 5005:5005 -v /home/taka/project/deploy/vocabulary-trainer-server:/app/storage image-name:tag
+# sudo docker run --name vocabulary-trainer-server -ti -d -p 5010:5010 -v /home/taka/project/deploy/vocabulary-trainer-server:/app/storage -v /home/taka/project/deploy/gtts:/app/gtts vocabulary-server:latest
