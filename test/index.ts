@@ -5,8 +5,10 @@ const env = dotenv.config({
   path: pp
 }).parsed
 
-import { CRUDTester } from './test.tester'
-import { PageTester } from './pageTester.test'
+// import { CRUDTester } from './test.tester'
+// import { PageTester } from './pageTester.test'
+import{ PageTester} from './apiTest/pageTester.test'
+import { VocabularyTester } from './apiTest/vocabularyTester.test'
 
 
 const port = process.env.PORT
@@ -19,4 +21,7 @@ describe('test start', async()=> {
 
   const pageTester = new PageTester(url, 'page')
   pageTester.run()
+
+  // const vocabularyTester = new VocabularyTester(url, 'vocabulary')
+  // vocabularyTester.run()
 })
