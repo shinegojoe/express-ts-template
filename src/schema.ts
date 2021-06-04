@@ -7,7 +7,7 @@ export type Page = {
 
 export type Text = {
   id?: number
-  vid: number
+  vId: number
   text: string
 }
 
@@ -22,5 +22,11 @@ export type Vocabulary = {
 export type Translate = {
   id?: number
   vocabulary: string
+  text: string
+}
+
+export type Script = {
+  id?: number
+  name: string,
   text: string
 }
