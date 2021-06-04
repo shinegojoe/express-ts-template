@@ -9,6 +9,8 @@ const env = dotenv.config({
 // import { PageTester } from './pageTester.test'
 import{ PageTester} from './apiTest/pageTester.test'
 import { VocabularyTester } from './apiTest/vocabularyTester.test'
+import { TextTester } from './apiTest/textTester.test'
+import { TranslateTester } from './apiTest/translateTester.test'
 
 
 const port = process.env.PORT
@@ -19,9 +21,14 @@ describe('test start', async()=> {
   // const testTester = new CRUDTester(url, 'test')
   // testTester.run()
 
-  const pageTester = new PageTester(url, 'page')
-  pageTester.run()
+  // const pageTester = new PageTester(url, 'page')
+  // pageTester.run()
 
   // const vocabularyTester = new VocabularyTester(url, 'vocabulary')
   // vocabularyTester.run()
+  // const textTester = new TextTester(url, 'text')
+  // textTester.run()
+
+  const translateTester = new TranslateTester(url, 'translate')
+  translateTester.run()
 })

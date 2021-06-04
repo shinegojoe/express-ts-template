@@ -2,6 +2,11 @@ import { ServerResp } from './serverResp'
 import { RunResult } from 'better-sqlite3'
 
 
+export type AddRes = {
+  msg: string,
+  insetId?: Number
+}
+
 const baseLayer = function<T> (data: T) {
   const resp = new ServerResp(data)
   return resp
@@ -24,9 +29,16 @@ const addLayer = function (data: RunResult | undefined) {
   }
 
   if(data.changes ===0) {
-    return new ServerResp('data already exist')
+    const res: AddRes = {
+      msg: 'data already exist'
+    }
+    return new ServerResp(res)
   } else {
-    return new ServerResp('success')
+    const res: AddRes = {
+      msg: 'success',
+      insetId: data.lastInsertRowid as Number
+    }
+    return new ServerResp(res)
   }
 }
 

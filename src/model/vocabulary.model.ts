@@ -8,7 +8,7 @@ import { SqliteHelper } from '../helper/DBHelper/sqliteHelper'
 const cfg: ISqlConfig = {
   add: 'INSERT or IGNORE INTO vocabulary(vocabulary, pageId) VALUES($vocabulary, $pageId)',
   list: 'SELECT * from vocabulary WHERE pageId=$pageId',
-  get: '',
+  get: 'SELECT * from vocabulary WHERE id=$id',
   update: 'UPDATE vocabulary SET vocabulary=$vocabulary WHERE id=$id',
   del: 'DELETE from vocabulary WHERE id=$id'
 }

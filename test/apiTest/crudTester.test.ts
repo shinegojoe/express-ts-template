@@ -2,7 +2,7 @@ import { assert } from 'chai'
 import axios, { AxiosRequestConfig } from 'axios'
 import { RunResult } from 'better-sqlite3'
 import { ServerResp } from '../../src/responseLayer/serverResp'
-
+import { AddRes } from '../../src/responseLayer/baseLayer'
 
 
 abstract class CRUDTester<T> {
@@ -33,9 +33,9 @@ abstract class CRUDTester<T> {
       //   url: `${this.url}`,
       //   data: testData
       // })
-      const res = await axios.post<ServerResp<string>>(this.url, testData)
+      const res = await axios.post<ServerResp<AddRes>>(this.url, testData)
       const resData = res.data
-      assert.equal(resData.data, 'success')
+      assert.equal(resData.data.msg, 'success')
 
     })
   }
@@ -47,7 +47,6 @@ abstract class CRUDTester<T> {
       }
       const res = await axios.get<ServerResp<T[]>>(this.url, cfg)
       const resData = res.data.data
-      // console.log(resData)
       assert.isArray(resData)
       const data = resData[resData.length-1] as any
       this.lastId = data.id
