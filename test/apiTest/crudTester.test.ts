@@ -8,10 +8,11 @@ import { AddRes } from '../../src/responseLayer/baseLayer'
 abstract class CRUDTester<T> {
   
   url: string
-  lastId: number
+  lastId?: Number
   constructor(url: string, apiString: string) {
     this.url = `${url}/${apiString}`
     this.lastId = 0
+
     // this.testData = {
     //   name: `test_${Math.floor(Math.random()* 1000)}`
     // }
@@ -36,6 +37,8 @@ abstract class CRUDTester<T> {
       const res = await axios.post<ServerResp<AddRes>>(this.url, testData)
       const resData = res.data
       assert.equal(resData.data.msg, 'success')
+      this.lastId = resData.data.insetId
+
 
     })
   }
@@ -48,8 +51,8 @@ abstract class CRUDTester<T> {
       const res = await axios.get<ServerResp<T[]>>(this.url, cfg)
       const resData = res.data.data
       assert.isArray(resData)
-      const data = resData[resData.length-1] as any
-      this.lastId = data.id
+      // const data = resData[resData.length-1] as any
+      // this.lastId = data.id
     })
   }
 

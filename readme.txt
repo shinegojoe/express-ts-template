@@ -14,3 +14,9 @@ first time
 
 # CD
 4. bash deploy/deploy.sh
+
+
+test
+1. api test
+
+2. module test
